@@ -1,16 +1,8 @@
-spring.cloud.stream:
-  bindings:
-    domainProcessor-out-0:
-      destination: my-domains
+spring:
   kafka:
-    bindings:
-      domainProcessor-out-0:
-        producer:
-          configuration:
-            value:
-              serializer: org.springframework.kafka.support.serializer.JsonSerializer
-    binder:
-      brokers:
-        - localhost:9091
-        - localhost:9092
-
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        schema.registry.url: http://localhost:8081
