@@ -10,7 +10,7 @@ spring.cloud.stream:
         consumer:
           configuration:
             value:
-              deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+              deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
     binder:
       brokers:
         - localhost:9091

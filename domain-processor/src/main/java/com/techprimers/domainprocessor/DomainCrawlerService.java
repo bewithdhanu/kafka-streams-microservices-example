@@ -1,5 +1,7 @@
 package com.techprimers.domainprocessor;
 
+
+
 import com.techprimers.domaincrawler.Domain;
 import com.techprimers.domaincrawler.DomainList;
 import org.springframework.http.MediaType;
@@ -25,7 +27,7 @@ public class DomainCrawlerService {
 
         domainListMono.subscribe(domainList -> {
             domainList.getDomains().forEach(domain -> {
-                if (!domain.isDead()) {
+                if (!domain.getIsDead()) {
                     kafkaTemplate.send(KAFKA_TOPIC, domain);
                     System.out.println("Domain message" + domain.getDomain());
                 } else {

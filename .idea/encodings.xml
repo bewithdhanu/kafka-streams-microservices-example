@@ -5,8 +5,10 @@
     <file url="file://$PROJECT_DIR$/domain-crawler/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/domain-processor/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/domain-processor/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/domain-processor/target/generated" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/domain-processor/target/generated/avro" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/domain-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/domain-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/domain-service/target/generated" charset="UTF-8" />
   </component>
 </project>

@@ -1,0 +1,39 @@
+{
+  "type": "record",
+  "name": "DomainList",
+  "namespace": "com.techprimers.domaincrawler",
+  "fields": [
+    {
+      "name": "domains",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "Domain",
+          "fields": [
+            {"name": "domain", "type": "string"},
+            {"name": "create_date", "type": "string"},
+            {"name": "update_date", "type": "string"},
+            {"name": "country", "type": "string"},
+            {"name": "isDead", "type": "boolean"},
+            {"name": "A", "type": ["null", {"type": "array", "items": "string"}], "default": null},
+            {"name": "NS", "type": ["null", {"type": "array", "items": "string"}], "default": null},
+            {"name": "CNAME", "type": ["null", "string"], "default": null},
+            {"name": "MX", "type": ["null", {"type": "array", "items": {
+              "type": "record",
+              "name": "MXRecord",
+              "fields": [
+                {"name": "exchange", "type": "string"},
+                {"name": "priority", "type": "int"}
+              ]
+            }}], "default": null},
+            {"name": "TXT", "type": ["null", {"type": "array", "items": "string"}], "default": null}
+          ]
+        }
+      }
+    },
+    {"name": "total", "type": "int"},
+    {"name": "time", "type": "string"},
+    {"name": "next_page", "type": ["null", "string"], "default": null}
+  ]
+}
