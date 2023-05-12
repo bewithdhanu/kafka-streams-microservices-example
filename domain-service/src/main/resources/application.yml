@@ -3,7 +3,7 @@ spring.cloud.stream:
     definition: domainService
   bindings:
     domainService-in-0:
-      destination: active.web-domains
+      destination: my-domains
   kafka:
     bindings:
       domainService-in-0:

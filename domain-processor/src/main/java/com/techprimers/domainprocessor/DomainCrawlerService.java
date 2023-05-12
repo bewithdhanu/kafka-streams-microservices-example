@@ -11,7 +11,7 @@ import reactor.core.publisher.Mono;
 @Service
 public class DomainCrawlerService {
 
-    private final String KAFKA_TOPIC = "web-domains";
+    private final String KAFKA_TOPIC = "my-domains";
     private final KafkaTemplate<String, Domain> kafkaTemplate;
 
     public DomainCrawlerService(KafkaTemplate<String, Domain> kafkaTemplate) {
@@ -24,8 +24,8 @@ public class DomainCrawlerService {
 
 
         domainListMono.subscribe(domainList -> {
-            domainList.domains.forEach(domain -> {
-                if(!domain.isDead()) {
+            domainList.getDomains().forEach(domain -> {
+                if (!domain.isDead()) {
                     kafkaTemplate.send(KAFKA_TOPIC, domain);
                     System.out.println("Domain message" + domain.getDomain());
                 } else {
