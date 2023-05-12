@@ -1,4 +1,4 @@
-package com.techprimers.domaincrawler;
+package com.techprimers.domainprocessor;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

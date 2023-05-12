@@ -7,14 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="domain-service" />
-        <module name="domain-crawler" />
         <module name="domain-processor" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="domain-crawler" target="11" />
-      <module name="domain-processor" target="11" />
-      <module name="domain-service" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

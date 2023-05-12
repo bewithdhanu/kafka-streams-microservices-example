@@ -14,7 +14,7 @@ public class DomainKafkaConsumer {
   @Bean
   public Consumer<KStream<String, Domain>> domainService() {
     return kstream -> kstream.foreach((key, domain) -> {
-      System.out.println(String.format("Domain consumed[%s] Status[%s]", domain.getDomain(), domain.isDead()));
+      System.out.printf("Domain consumed[%s] is Dead[%s]%n", domain.getDomain(), domain.isDead());
     });
   }
 }
