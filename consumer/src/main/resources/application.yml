@@ -1,12 +1,15 @@
 spring:
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: "pkc-ymrq7.us-east-2.aws.confluent.cloud:9092"
     consumer:
       group-id: "spring-boot-avro-consumer-id"
       keyDeserializer: "org.apache.kafka.common.serialization.StringDeserializer"
       valueDeserializer: "io.confluent.kafka.serializers.KafkaAvroDeserializer"
       autoOffsetReset: "earliest"
       properties:
+        security.protocol: SASL_SSL
+        sasl.mechanism: PLAIN
+        sasl.jaas.config: "org.apache.kafka.common.security.plain.PlainLoginModule required username='VKORYZIIOTAQGEIN' password='NLhmfnvzqLOpJ3qccSZiVtvkuzhXS70DbbxgJc1uT284J6b5YQbkLl22PiC/zxDm';"
         schema:
           registry:
             url: "https://psrc-mw731.us-east-2.aws.confluent.cloud"
