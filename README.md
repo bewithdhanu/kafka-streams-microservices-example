@@ -1,7 +1,7 @@
 
-# Kafka Avro Serialization with Spring - Project README
+# Kafka Avro Serialization with Spring - Microservices Setup
 
-This repository contains a sample project that demonstrates how to use Kafka with Avro serialization using Spring. The project consists of a producer service and a consumer service.
+This repository contains a sample project that demonstrates how to use Kafka with Avro serialization using Spring Cloud Stream. The project consists of a producer microservice and a consumer microservice. The producer microservice fetches information from an external API and publishes messages to a Kafka topic in Avro format. The consumer microservice receives messages from the Kafka topic and logs them into the console.
 
 ## Prerequisites
 
@@ -15,22 +15,32 @@ Before running the project, make sure you have the following prerequisites insta
 
 The project is structured as follows:
 
--   `producer.yml`: YAML configuration file for the producer service.
--   `consumer.yml`: YAML configuration file for the consumer service.
+-   `application.yml`: YAML configuration files for the producer and consumer microservice.
 -   Other project files and directories.
 
 ## Getting Started
 
-To run the project, follow these steps:
+To run the microservices, follow these steps:
 
-1.  Configure the Kafka and Avro properties in the `producer.yml` and `consumer.yml` files according to your setup.
+1.  Configure the Kafka and Avro properties in the `application.yml` files according to your setup.
 2.  Start Apache Kafka and Confluent Schema Registry.
-3.  Build and run the producer service.
-4.  Build and run the consumer service.
+3.  Build and run the producer microservice.
+4.  Build and run the consumer microservice.
 
-## Producer Service
+## Producer Microservice
 
-The producer service fetches information from a source and publishes it to a Kafka topic using Avro serialization.
+The producer microservice fetches information from an external API and publishes messages to a Kafka topic in Avro format.
+
+### REST API
+
+The producer microservice provides the following REST API:
+
+-   `POST /domain/lookup/{domainName}`: Generates messages from the external API for the specified domain and publishes them to the Kafka topic.
+
+    -   Example: `POST http://localhost:8080/domain/lookup/google`
+
+        This API endpoint will generate messages for the domain "google" and publish them to the Kafka topic.
+
 
 ### Configuration
 
@@ -41,9 +51,9 @@ In the `producer.yml` file, you can configure the following properties:
 -   `spring.cloud.stream.kafka.bindings.consumer-in-0.consumer.configuration.value.deserializer`: Specifies the Avro deserializer for the consumer.
 -   `spring.cloud.stream.kafka.binder.brokers`: Specifies the Kafka broker(s) address.
 
-## Consumer Service
+## Consumer Microservice
 
-The consumer service consumes messages from the Kafka topic and processes them.
+The consumer microservice receives messages from the Kafka topic and logs them into the console.
 
 ### Configuration
 
