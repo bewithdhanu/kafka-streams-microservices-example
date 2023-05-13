@@ -10,7 +10,9 @@ spring:
       properties:
         schema:
           registry:
-            url: http://localhost:8081
+            url: "https://psrc-mw731.us-east-2.aws.confluent.cloud"
+        basic.auth.credentials.source: USER_INFO
+        basic.auth.user.info: "PTGIP2PWT24RUGYC:S2CKraGQPm2PDrosgdxoa13rzGGh7E6clmqKGHnWpLmMoi2djE570hOAGdCV1V95"
 
 avro:
   topic:
