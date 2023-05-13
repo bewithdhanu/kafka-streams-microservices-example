@@ -2,7 +2,6 @@ package com.example.consumer;
 
 import com.example.schema.Domain;
 import org.apache.kafka.streams.kstream.KStream;
-import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

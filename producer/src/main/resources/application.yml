@@ -14,4 +14,4 @@ spring:
 
 avro:
   topic:
-    name: "com.example.domain-list"
+    name: "com.example.domains"
