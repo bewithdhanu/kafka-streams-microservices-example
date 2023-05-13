@@ -1,19 +1,17 @@
-spring.cloud.stream:
-  function:
-    definition: consumer
-  bindings:
-    consumer-in-0:
-      destination: "com.example.domains.new2"
+spring:
   kafka:
-    bindings:
-      consumer-in-0:
-        consumer:
-          configuration:
-            key:
-              deserializer: org.apache.kafka.common.serialization.StringSerializer
-            value:
-              deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
-    binder:
-      brokers:
-        - localhost:9091
-        - localhost:9092
+    consumer:
+      group-id: "spring-boot-avro-consumer-id"
+      keyDeserializer: "org.apache.kafka.common.serialization.StringDeserializer"
+      valueDeserializer: "io.confluent.kafka.serializers.KafkaAvroDeserializer"
+      autoOffsetReset: "earliest"
+      properties:
+        schema:
+          registry:
+            url: "http://localhost:8081"
+        specific:
+          avro:
+            reader: "true"
+avro:
+  topic:
+    name: "com.example.domains.new2"

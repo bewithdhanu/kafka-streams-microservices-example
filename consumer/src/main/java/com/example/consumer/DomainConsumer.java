@@ -1,21 +1,16 @@
 package com.example.consumer;
 
 import com.example.schema.Domain;
-import org.apache.kafka.streams.kstream.KStream;
-import org.springframework.context.annotation.Bean;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.context.annotation.Configuration;
-
-import java.util.function.Consumer;
+import org.springframework.kafka.annotation.KafkaListener;
 
 @Configuration
 public class DomainConsumer {
 
-  @Bean
-  public Consumer<KStream<String, Domain>> consumer() {
-    return kstream -> {
-      kstream.foreach((key, domain) -> {
+    @KafkaListener(topics = "${avro.topic.name}")
+    public void read(ConsumerRecord<String, Domain> record) {
+        Domain domain = record.value();
         System.out.printf("Domain consumed[%s] is Dead[%s]%n", domain.getDomain(), domain.getIsDead());
-      });
-    };
-  }
+    }
 }
