@@ -8,12 +8,14 @@ import org.springframework.context.annotation.Configuration;
 import java.util.function.Consumer;
 
 @Configuration
-public class DomainKafkaConsumer {
+public class DomainConsumer {
 
   @Bean
-  public Consumer<KStream<String, Domain>> domainService() {
-    return kstream -> kstream.foreach((key, domain) -> {
-      System.out.printf("Domain consumed[%s] is Dead[%s]%n", domain.getDomain(), domain.getIsDead());
-    });
+  public Consumer<KStream<String, Domain>> consumer() {
+    return kstream -> {
+      kstream.foreach((key, domain) -> {
+        System.out.printf("Domain consumed[%s] is Dead[%s]%n", domain.getDomain(), domain.getIsDead());
+      });
+    };
   }
 }

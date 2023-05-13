@@ -12,6 +12,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
+import java.util.Date;
+
 @Service
 public class DomainCrawlerService {
 
@@ -31,7 +33,7 @@ public class DomainCrawlerService {
         domainListMono.subscribe(domainList -> {
             domainList.getDomains().forEach(domain -> {
                 if (!domain.getIsDead()) {
-                    kafkaTemplate.send(kafkaTopic, domain);
+                    kafkaTemplate.send(kafkaTopic, String.valueOf(new Date().getTime()), domain);
                     System.out.println("Domain message" + domain.getDomain());
                 } else {
                     System.out.println("Dead Domain message" + domain.getDomain());
