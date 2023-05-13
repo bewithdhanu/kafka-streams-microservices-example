@@ -7,9 +7,16 @@ This repository contains a sample project that demonstrates how to use Kafka wit
 
 Before running the project, make sure you have the following prerequisites installed:
 
--   Java Development Kit (JDK)
--   Apache Kafka
--   Confluent Schema Registry
+-   **Option 1: Apache Kafka and Confluent Schema Registry**
+
+    -   Java Development Kit (JDK)
+    -   Apache Kafka
+    -   Confluent Schema Registry
+-   **Option 2: Confluent Cloud (https://confluent.cloud/)**
+
+    -   Java Development Kit (JDK)
+    -   Confluent Cloud account with a Kafka cluster and Schema Registry
+    -   Confluent Cloud API key and secret
 
 ## Project Structure
 
