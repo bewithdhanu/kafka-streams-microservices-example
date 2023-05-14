@@ -1,0 +1,186 @@
+{
+  "type": "record",
+  "name": "FilmPaginate",
+  "namespace": "com.example.schema",
+  "fields": [
+    {
+      "name": "count",
+      "type": [
+        "null",
+        "int"
+      ],
+      "default": null
+    },
+    {
+      "name": "next",
+      "type": "null",
+      "default": null
+    },
+    {
+      "name": "previous",
+      "type": "null",
+      "default": null
+    },
+    {
+      "name": "results",
+      "type": [
+        "null",
+        {
+          "type": "array",
+          "items": [
+            "null",
+            {
+              "type": "record",
+              "name": "Film",
+              "fields": [
+                {
+                  "name": "characters",
+                  "type": [
+                    "null",
+                    {
+                      "type": "array",
+                      "items": [
+                        "null",
+                        "string"
+                      ]
+                    }
+                  ],
+                  "default": null
+                },
+                {
+                  "name": "created",
+                  "type": [
+                    "null",
+                    "string"
+                  ],
+                  "default": null
+                },
+                {
+                  "name": "director",
+                  "type": [
+                    "null",
+                    "string"
+                  ],
+                  "default": null
+                },
+                {
+                  "name": "edited",
+                  "type": [
+                    "null",
+                    "string"
+                  ],
+                  "default": null
+                },
+                {
+                  "name": "episode_id",
+                  "type": [
+                    "null",
+                    "int"
+                  ],
+                  "default": null
+                },
+                {
+                  "name": "opening_crawl",
+                  "type": [
+                    "null",
+                    "string"
+                  ],
+                  "default": null
+                },
+                {
+                  "name": "planets",
+                  "type": [
+                    "null",
+                    {
+                      "type": "array",
+                      "items": [
+                        "null",
+                        "string"
+                      ]
+                    }
+                  ],
+                  "default": null
+                },
+                {
+                  "name": "producer",
+                  "type": [
+                    "null",
+                    "string"
+                  ],
+                  "default": null
+                },
+                {
+                  "name": "release_date",
+                  "type": [
+                    "null",
+                    "string"
+                  ],
+                  "default": null
+                },
+                {
+                  "name": "species",
+                  "type": [
+                    "null",
+                    {
+                      "type": "array",
+                      "items": [
+                        "null",
+                        "string"
+                      ]
+                    }
+                  ],
+                  "default": null
+                },
+                {
+                  "name": "starships",
+                  "type": [
+                    "null",
+                    {
+                      "type": "array",
+                      "items": [
+                        "null",
+                        "string"
+                      ]
+                    }
+                  ],
+                  "default": null
+                },
+                {
+                  "name": "title",
+                  "type": [
+                    "null",
+                    "string"
+                  ],
+                  "default": null
+                },
+                {
+                  "name": "url",
+                  "type": [
+                    "null",
+                    "string"
+                  ],
+                  "default": null
+                },
+                {
+                  "name": "vehicles",
+                  "type": [
+                    "null",
+                    {
+                      "type": "array",
+                      "items": [
+                        "null",
+                        "string"
+                      ]
+                    }
+                  ],
+                  "default": null
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "default": null
+    }
+  ]
+}

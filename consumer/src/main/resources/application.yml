@@ -20,4 +20,4 @@ spring:
             reader: "true"
 avro:
   topic:
-    name: "com.example.domains.new2"
+    name: "com.example.films"

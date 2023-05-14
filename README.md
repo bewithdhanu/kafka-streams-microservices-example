@@ -42,11 +42,11 @@ The producer microservice fetches information from an external API and publishes
 
 The producer microservice provides the following REST API:
 
--   `POST /domain/lookup/{domainName}`: Generates messages from the external API for the specified domain and publishes them to the Kafka topic.
+-   `POST /swapi/films/{filmName}`: Generates messages from the external API for the specified film and publishes them to the Kafka topic.
 
-    -   Example: `POST http://localhost:8080/domain/lookup/google`
+    -   Example: `POST http://localhost:8080/swapi/films/star`
 
-        This API endpoint will generate messages for the domain "google" and publish them to the Kafka topic.
+        This API endpoint will generate messages with name "star" and publish them to the Kafka topic.
 
 
 ### Configuration
